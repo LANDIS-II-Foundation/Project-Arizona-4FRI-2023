@@ -1,0 +1,86 @@
+LandisData  "SCRAPPLE"
+
+
+Timestep                            1
+
+Species_CSV_File	"../Inputs/scrpple/SCRPPLE_spp_4fri.csv"
+
+AccidentalIgnitionsMap     	"../Inputs/scrpple/acc_ig_re.tif"
+LightningIgnitionsMap  		"../Inputs/scrpple/lit_ig_re.tif"
+RxIgnitionsMap  		"../Inputs/scrpple/template_zero.tif" <<NEEDED FOR RUN
+
+AccidentalSuppressionMap	"../Inputs/scrpple/suppression_accidental_increased.tif" <<updated AS 2024-2-12
+LightningSuppressionMap		"../Inputs/scrpple/suppression_lightning.tif" <<updated AS 2024-2-12
+RxSuppressionMap		"../Inputs/scrpple/template_zero.tif" <<NEEDED FOR RUN
+
+GroundSlopeMap "../Inputs/scrpple/slope_final.tif"		
+UphillSlopeAzimuthMap  "../Inputs/scrpple/upslopeasp_final.tif"	
+ClayMap "../Inputs/scrpple/soil_eco_re.tif"
+
+>>>>>>>> Count model<<<<<<<< << 
+LightningIgnitionsB0 -6.676788 << -6.000 << -6.676788 << -6.966788 << -7.665758 (previous intercepts)
+LightningIgnitionsB1  0.0826
+
+AccidentalIgnitionsB0  -5.5286 << -5.35386 << -5.210475 (previous intercepts)
+AccidentalIgnitionsB1   0.0644
+
+IgnitionDistribution Poisson << Poisson or ZeroInflatedPoisson
+
+MaximumFineFuels 1000 <<Set to 1000 to match typical maximum fine fuels from LANDIS model
+
+>> Prescribed Fire Parameters << not running Rx fire - SKIP
+MaximumRxWindSpeed 11
+MaximumRxFireWeatherIndex 42.0
+MinimumRxFireWeatherIndex 6.0
+MaximumRxTemperature 32.0	<< Optional
+MinimumRxRelativeHumidity 22.0	<< Optional
+MaximumRxFireIntensity 1
+NumberRxAnnualFires 0
+NumberRxDailyFires 1
+FirstDayRxFires 10
+LastDayRxFires 350
+TargetRxSize 40
+
+>> Parameters 
+MaximumSpreadAreaB0	-750 << (previous -71) 
+MaximumSpreadAreaB1	17.5 <<-3 <<FWI
+MaximumSpreadAreaB2	10.6 <<-2.5  <<effective wind speed
+
+
+SpreadProbabilityB0 -10 << -0.631486 << -1.3000396 << -2.4 <<more negative means lower spread
+SpreadProbabilityB1 0.041701 << 0.0035530  <<FWI
+SpreadProbabilityB2  0.132817 << 0.4869669 << relativized fine fuels
+SpreadProbabilityB3 0.27 << 0.319130 << 0.0792751 << effective wind speed.
+
+SiteMortalityB0	-0.00004047 << -0.0004047	<< Intercept 
+SiteMortalityB1	0.00026380 << 0.00026380	<< Clay 
+SiteMortalityB2	-0.00000483 << -0.00000483	<< Previous 
+SiteMortalityB3	0.0003033 << 0.00003033	        << Wind 
+SiteMortalityB4	0.00000857 << 0.00000857	<< CWD 
+SiteMortalityB5	0.00758100 << 0.00358100	<< Fine 
+SiteMortalityB6	0.00000124 << 0.00000064	<< Ladder 
+
+CohortMortalityB0 -0.794887 << Intercept 
+CohortMortalityB1 -0.156927 << The parameter fit for the relationship between bark thickness and cohort mortality 
+CohortMortalityB2  0.008 << The parameter fit for the relationship between site mortality and cohort mortality. 
+
+LadderFuelMaxAge 20
+
+LadderFuelSpeciesList 
+AbieConc AbieLasi JuniOste PiceEnge PicePung PinuEdul PinuPond PopuTrem PseuMenz QuerGamb
+
+SuppressionMaxWindSpeed 12
+>>Suppression_CSV_File "../Inputs/scrpple/Suppression_Input_None.csv"
+Suppression_CSV_File "../Inputs/scrpple/Suppression_Input_Gannon.csv" 
+
+DeadWoodTable <<Needs updated
+AbieConc	29
+AbieLasi	29
+JuniOste	24
+PiceEnge	26
+PicePung	26
+PinuEdul	25
+PinuPond	24
+PopuTrem	30
+PseuMenz	27
+QuerGamb	24

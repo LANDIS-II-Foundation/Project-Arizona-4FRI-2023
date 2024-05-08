@@ -1,0 +1,10 @@
+LandisData	"Ecoregions"		
+
+>> 	Map Code		
+>>Active	Name	Description
+>>--------------------------------------------------------			
+yes	1	1		"Low elev"
+yes	2	2		"Mid elev"
+yes	3	3		"High elev"
+no	0	0		"Inactive"
+
