@@ -26,13 +26,14 @@ InitialSOM3CMapName			"../Inputs/NECNmaps/SOM3C.tif"
 InitialSOM3NMapName			"../Inputs/NECNmaps/SOM3N.tif"
 InitialDeadWoodSurfaceMapName		"../Inputs/NECNmaps/InitialDeadWoodSurface.tif"
 InitialDeadCoarseRootsMapName		"../Inputs/NECNmaps/InitialDeadWoodSurface.tif"
-NormalSWAMapName 			"../Inputs/SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
-NormalCWDMapName			"../Inputs/CWD_normals.tif" <<optional, for use with drought mortality
+>>NormalSWAMapName 			"../Inputs/NECNmaps/SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
+NormalCWDMapName			"../Inputs/NECNmaps/CWD_normals.tif" <<optional, for use with drought mortality
+NormalTempMapName			"../Inputs/NECNmaps/Temp_normals.tif" <<optional, for use with drought mortality
 
 CalibrateMode 	no
-SmokeModelOutputs yes
-Write_SWA_Maps yes
-Write_CWD_Maps yes
+SmokeModelOutputs no
+Write_SWA_Maps no
+Write_CWD_Maps no
 Write_Species_Drought_Maps yes
 
 WaterDecayFunction Ratio <<Linear or Ratio
