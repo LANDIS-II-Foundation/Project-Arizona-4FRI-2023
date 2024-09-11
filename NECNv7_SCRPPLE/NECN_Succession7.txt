@@ -1,6 +1,6 @@
 LandisData	"NECN Succession"
 
-Timestep  10
+Timestep  1
 
 SeedingAlgorithm  WardSeedDispersal
 
@@ -9,28 +9,28 @@ InitialCommunitiesMap   "../Inputs/Climate-ic/files/initial_communities_clim_all
 ClimateConfigFile 	"./climate-generator_hist.txt"	
 
 SoilDepthMapName			"../Inputs/NECNmaps/SoilDepth.tif"
-SoilDrainMapName			"../Inputs/NECNmaps/SoilDrain.tif" 
-SoilBaseFlowMapName			"../Inputs/NECNmaps/SoilBaseFlow.tif" 
-SoilStormFlowMapName			"../Inputs/NECNmaps/SoilStormFlow.tif"
+SoilDrainMapName			"../Inputs/NECNmaps/SoilDrain99.tif" 
+SoilBaseFlowMapName			"../Inputs/NECNmaps/SoilBaseFlow0.tif" 
+SoilStormFlowMapName			"../Inputs/NECNmaps/SoilBaseFlow0.tif"
 SoilFieldCapacityMapName		"../Inputs/NECNmaps/SoilFieldCapacity.tif"
 SoilWiltingPointMapName			"../Inputs/NECNmaps/SoilWiltPoint.tif"
 SoilPercentSandMapName			"../Inputs/NECNmaps/soilpersand.tif"
 SoilPercentClayMapName			"../Inputs/NECNmaps/soilperclay.tif"
-InitialSOM1CsurfMapName			"../Inputs/NECNmaps/SOM1Csurf.tif"
-InitialSOM1NsurfMapName			"../Inputs/NECNmaps/SOM1Nsurf.tif"
-InitialSOM1CsoilMapName			"../Inputs/NECNmaps/SOM1Csoil.tif"
-InitialSOM1NsoilMapName			"../Inputs/NECNmaps/SOM1Nsoil.tif"
-InitialSOM2CMapName			"../Inputs/NECNmaps/SOM2C.tif"
-InitialSOM2NMapName			"../Inputs/NECNmaps/SOM2N.tif"
-InitialSOM3CMapName			"../Inputs/NECNmaps/SOM3C.tif"
-InitialSOM3NMapName			"../Inputs/NECNmaps/SOM3N.tif"
+InitialSOM1CsurfMapName			"../Inputs/NECNmaps/SOM1Csurf_is.tif"
+InitialSOM1NsurfMapName			"../Inputs/NECNmaps/SOM1Nsurf_is.tif"
+InitialSOM1CsoilMapName			"../Inputs/NECNmaps/SOM1Csoil_is.tif"
+InitialSOM1NsoilMapName			"../Inputs/NECNmaps/SOM1Nsoil_is.tif"
+InitialSOM2CMapName			"../Inputs/NECNmaps/SOM2C_is.tif"
+InitialSOM2NMapName			"../Inputs/NECNmaps/SOM2N_is.tif"
+InitialSOM3CMapName			"../Inputs/NECNmaps/SOM3C_is.tif"
+InitialSOM3NMapName			"../Inputs/NECNmaps/SOM3N_is.tif"
 InitialDeadWoodSurfaceMapName		"../Inputs/NECNmaps/InitialDeadWoodSurface.tif"
-InitialDeadCoarseRootsMapName		"../Inputs/NECNmaps/InitialDeadWoodSurface.tif"
+InitialDeadCoarseRootsMapName		"../Inputs/NECNmaps/InitialDeadCoarseRoots.tif"
 NormalSWAMapName 			"../Inputs/SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
 NormalCWDMapName			"../Inputs/CWD_normals.tif" <<optional, for use with drought mortality
 
 CalibrateMode 	no
-SmokeModelOutputs yes
+SmokeModelOutputs no
 Write_SWA_Maps yes
 Write_CWD_Maps yes
 Write_Species_Drought_Maps yes
@@ -39,22 +39,22 @@ WaterDecayFunction Ratio <<Linear or Ratio
 
 
 ProbabilityEstablishAdjust 	0.2
-InitialMineralN			2.4
+InitialMineralN			0.25 << 2.4 (original) adjusted to match published values 
 InitialFineFuels 		0.1  << a fraction 0-1.0 of dead wood.
-AtmosphericNSlope		0.035
-AtmosphericNIntercept		0.004
+AtmosphericNSlope		0.0023 << 0.035 from NDAP lm vs. previous value
+AtmosphericNIntercept		0.01 << 0.032 << 0.004 from NDAP lm vs. previous value with lowered intercept 
 Latitude			35.2
-DenitrificationRate		0.1
-DecayRateSurf			0.15
-DecayRateSOM1			1.0
-DecayRateSOM2			0.018
+DenitrificationRate		0.1 << 0.1 lower for more soil N 
+DecayRateSurf			1.0 << 0.80 << set to 2.0 and see if model runs (or it could max out at 1.0) (prev 0.15)
+DecayRateSOM1			1.0 << 0.90 << 1.0 (orig)
+DecayRateSOM2			0.1 << 0.80 << 0.018 (orig)
 DecayRateSOM3			0.00035
 
-SpeciesParameters "../Inputs/necn_species_params.csv"
+SpeciesParameters "../Inputs/necn_species_params.csv" << previous max anpp
 
 FunctionalGroupParameters  "../Inputs/necn_functional_params.csv"
 
-DroughtMortalityParameters "../Inputs/necn_drought_params.csv"
+DroughtMortalityParameters "../Inputs/necn_drought_params-Sept2024-cal.csv"
 
 FireReductionParameters
 >> Updated 3/10/2022 by Sam Flake.

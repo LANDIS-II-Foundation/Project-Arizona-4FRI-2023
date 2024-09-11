@@ -1,6 +1,6 @@
 LandisData "Climate Config"				
 		
-ClimateTimeSeries			Daily_SequencedYears
+ClimateTimeSeries			Daily_SequencedYears << Daily_RandomYears << Daily_SequencedYears << Daily_AverageAllYears
 ClimateFile				"../Inputs/Climate-ic/files/gridmet_climregions.csv"
 ClimateFileFormat			Daily_Temp-C_Precip-mmDay
 

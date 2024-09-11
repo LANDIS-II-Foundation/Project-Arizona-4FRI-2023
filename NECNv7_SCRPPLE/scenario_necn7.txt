@@ -1,11 +1,11 @@
 LandisData  Scenario
 
-Duration 50 
+Duration 42 
 
 Species   "../Inputs/species.txt"
 
 Ecoregions      "../Inputs/Climate-ic/files/climate_regions.txt"
-EcoregionsMap   "../Inputs/Climate-ic/files/4FRI_climregion_masked_0.tif"
+EcoregionsMap   "../Inputs/Climate-ic/files/4FRI_climregion_masked_0.tif" <<   ClimateRegion2
 
 CellLength  100.0 << meters, 100 x 100 m = 1 ha
 
@@ -26,7 +26,7 @@ CellLength  100.0 << meters, 100 x 100 m = 1 ha
 >> ---------------------- -------------------
 >>    	"Dynamic Fuel System"	"./DynamicFuels.txt"
 >>	"Dynamic Fire System"	"./DynamicFireIPSLCM5ALR.txt"
->>	"Biomass Harvest"	"./Harvest_statusquo.txt"
+	"Biomass Harvest"	"./Harvest/Harvest_statusquo_update.txt"
 	"SCRAPPLE"		"./scrpple_scenario1.txt"
 
 >> ------------------------
@@ -35,8 +35,8 @@ CellLength  100.0 << meters, 100 x 100 m = 1 ha
 
 >> 	Output Extension		Initialization File
 >> 	----------------		-------------------
->>	"Output Biomass"		"./output_Biomass.txt"
->>	"Output Biomass-by-Age"		"./output_Biomass-by-Age.txt"
+>>	"Output Biomass"		"./Biomass/output_Biomass.txt"
+>>	"Output Biomass-by-Age"		"./Biomass/output_Biomass-by-Age.txt"
 
 
 >>RandomNumberSeed  4,357  << optional parameter; default = the seed is
