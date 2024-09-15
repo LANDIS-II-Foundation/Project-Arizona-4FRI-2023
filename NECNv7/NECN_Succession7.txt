@@ -16,18 +16,18 @@ SoilFieldCapacityMapName		"../Inputs/NECNmaps/SoilFieldCapacity.tif"
 SoilWiltingPointMapName			"../Inputs/NECNmaps/SoilWiltPoint.tif"
 SoilPercentSandMapName			"../Inputs/NECNmaps/soilpersand.tif"
 SoilPercentClayMapName			"../Inputs/NECNmaps/soilperclay.tif"
-InitialSOM1CsurfMapName			"../Inputs/NECNmaps/SOM1Csurf_is.tif"
+InitialSOM1CsurfMapName			"../Inputs/NECNmaps/SOM1Csurf_is2.tif"
 InitialSOM1NsurfMapName			"../Inputs/NECNmaps/SOM1Nsurf_is.tif"
-InitialSOM1CsoilMapName			"../Inputs/NECNmaps/SOM1Csoil_is.tif"
+InitialSOM1CsoilMapName			"../Inputs/NECNmaps/SOM1Csoil_is2.tif"
 InitialSOM1NsoilMapName			"../Inputs/NECNmaps/SOM1Nsoil_is.tif"
-InitialSOM2CMapName			"../Inputs/NECNmaps/SOM2C_is.tif"
+InitialSOM2CMapName			"../Inputs/NECNmaps/SOM2C_is2.tif"
 InitialSOM2NMapName			"../Inputs/NECNmaps/SOM2N_is.tif"
-InitialSOM3CMapName			"../Inputs/NECNmaps/SOM3C_is.tif"
+InitialSOM3CMapName			"../Inputs/NECNmaps/SOM3C_is2.tif"
 InitialSOM3NMapName			"../Inputs/NECNmaps/SOM3N_is.tif"
 InitialDeadWoodSurfaceMapName		"../Inputs/NECNmaps/InitialDeadWoodSurface.tif"
 InitialDeadCoarseRootsMapName		"../Inputs/NECNmaps/InitialDeadCoarseRoots.tif"
 NormalSWAMapName 			"../Inputs/SWA_normals.tif" <<optional, for use with drought mortality. If not available yet, then make a dummy and set Use_Drought_Mortality to no, so you don't kill everything
-NormalCWDMapName			"../Inputs/CWD_normals.tif" <<optional, for use with drought mortality
+NormalCWDMapName			"../Inputs/CWD_norm_spin-up.tif" <<optional, for use with drought mortality
 
 CalibrateMode 	no
 SmokeModelOutputs no
@@ -39,15 +39,15 @@ WaterDecayFunction Ratio <<Linear or Ratio
 
 
 ProbabilityEstablishAdjust 	0.2
-InitialMineralN			0.25 << 2.4 (original) adjusted to match published values 
+InitialMineralN			0.25 << 2.4
 InitialFineFuels 		0.1  << a fraction 0-1.0 of dead wood.
 AtmosphericNSlope		0.0023 << 0.035 from NDAP lm vs. previous value
 AtmosphericNIntercept		0.01 << 0.032 << 0.004 from NDAP lm vs. previous value with lowered intercept 
 Latitude			35.2
 DenitrificationRate		0.1 << 0.1 lower for more soil N 
-DecayRateSurf			1.0 << 0.80 << set to 2.0 and see if model runs (or it could max out at 1.0) (prev 0.15)
-DecayRateSOM1			1.0 << 0.90 << 1.0 (orig)
-DecayRateSOM2			0.1 << 0.80 << 0.018 (orig)
+DecayRateSurf			0.4 << 1.0 << 0.80 << set to 2.0 and see if model runs (or it could max out at 1.0) (prev 0.15)
+DecayRateSOM1			0.9 << 0.90 << 1.0 (orig)
+DecayRateSOM2			0.06 << 0.80 << 0.018 (orig)
 DecayRateSOM3			0.00035
 
 SpeciesParameters "../Inputs/necn_species_params.csv" << previous max anpp
