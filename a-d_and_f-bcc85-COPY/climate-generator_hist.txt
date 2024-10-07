@@ -1,0 +1,18 @@
+LandisData "Climate Config"				
+		
+ClimateTimeSeries			Daily_SequencedYears
+ClimateFile				"../Inputs/Climate-ic/files/bcc-csm-rcp85_climregions.csv"
+ClimateFileFormat			Daily_Temp-C_Precip-mmDay
+
+SpinUpClimateTimeSeries			Daily_SequencedYears
+SpinUpClimateFile			"../Inputs/Climate-ic/files/bcc-csm-rcp85_climregions.csv"
+SpinUpClimateFileFormat			Daily_Temp-C_Precip-mmDay
+
+>>TCSI
+UsingFireClimate			yes
+FineFuelMoistureCode			85
+DuffMoistureCode			8
+DroughtCode				15
+FirstDayFire				10
+LastDayFire 				360
+AtmosphericPressure			102

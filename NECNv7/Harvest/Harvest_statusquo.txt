@@ -2,9 +2,9 @@ LandisData  "Biomass Harvest"
 
 Timestep    1
 
-ManagementAreas "./management_areas.tif"
+ManagementAreas "../Inputs/management_areas_int_mask.tif"
 
-Stands      "./standsMAunion.tif"
+Stands      "../Inputs/standsMAunion_int_mask.tif"
 
 
 >> ***************
