@@ -1,4 +1,0 @@
-LandisData	"Initial Communities"
->> Initial communities file using inventory data
-
-CSV_File "./ic/initial_communities_ClimateRegion.csv"
