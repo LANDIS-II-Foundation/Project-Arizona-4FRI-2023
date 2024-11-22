@@ -24,7 +24,7 @@ CellLength  100.0 << meters, 100 x 100 m = 1 ha
 
 >> Disturbance Extensions Initialization File
 >> ---------------------- -------------------
-	"SCRAPPLE"		"./scrpple_scenario1.txt"
+>>	"SCRAPPLE"		"./scrpple_scenario1.txt"
     	"Dynamic Fuel System"	"./DynamicFuels.txt"
 	"Biomass Harvest"	"./Harvest/Harvest_fast_TEST.txt" << v4.6
 
